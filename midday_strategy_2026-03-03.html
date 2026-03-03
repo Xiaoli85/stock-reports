@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A股午间超短策略 - 2026-03-03</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background-color: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .report-section { background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section-title { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 15px; }
+        .stock-list { display: flex; flex-wrap: wrap; gap: 15px; }
+        .stock-item { background-color: #ecf0f1; padding: 10px; border-radius: 5px; min-width: 120px; }
+        .stock-name { font-weight: bold; color: #2980b9; }
+        .stock-code { color: #7f8c8d; font-size: 0.9em; }
+        .money-flow { display: flex; justify-content: space-between; margin: 10px 0; }
+        .inflow { color: #27ae60; font-weight: bold; }
+        .outflow { color: #e74c3c; font-weight: bold; }
+        .timestamp { color: #7f8c8d; font-style: italic; text-align: right; margin-top: 20px; }
+        .navigation { margin-bottom: 20px; }
+        .nav-link { display: inline-block; margin-right: 15px; color: #3498db; text-decoration: none; }
+        .nav-link:hover { text-decoration: underline; }
+        .highlight { background-color: #fff3cd; padding: 2px 4px; border-radius: 3px; }
+        .profit-target { background-color: #d4edda; padding: 10px; border-left: 4px solid #28a745; margin: 15px 0; }
+        .risk-warning { background-color: #f8d7da; padding: 10px; border-left: 4px solid #dc3545; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>A股午间超短策略</h1>
+            <p>生成时间: 2026-03-03 12:25</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-link">最新报告</a>
+            <a href="archive/" class="nav-link">历史报告</a>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">上午市场概览</h2>
+            <div id="market-overview">
+                <p><strong>大盘表现：</strong>上证指数冲高回落，最高4185点后跳水至4179点，呈现高位震荡格局。</p>
+                <p><strong>涨跌中位数：</strong>-1.16%（赚钱效应较差）</p>
+                <p><strong>成交量：</strong>相比昨天预估+438亿，量能有所放大</p>
+                <p><strong>市场情绪：</strong>准冰点状态，多数个股下跌，资金集中在少数热点板块</p>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">资金流向分析</h2>
+            <div class="money-flow">
+                <div class="inflow">净流入最多板块: 石油/天然气 (+12.8亿)</div>
+                <div class="outflow">净流出最多板块: 科技/算力 (-8.2亿)</div>
+            </div>
+            <p><strong>板块轮动：</strong>"三桶油"（中石油、中石化、中海油）历史上首次集体涨停，成为绝对主线。航运、煤炭等能源相关板块跟涨。</p>
+            <p><strong>资金避险：</strong>大盘跳水时，资金涌入石油等传统能源板块避险，科技板块全面分歧。</p>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">赚钱效应 & 亏钱效应</h2>
+            <div id="profit-loss">
+                <p><strong>赚钱效应：</strong></p>
+                <ul>
+                    <li>石油/天然气板块：前排个股全部涨停，赚钱效应集中</li>
+                    <li>航运板块：招商南油、招商轮船等涨停</li>
+                    <li>煤炭板块：中煤能源创17年新高</li>
+                </ul>
+                
+                <p><strong>亏钱效应：</strong></p>
+                <ul>
+                    <li>科技板块：算力、AI、CPO等全面下跌，华胜天成、润泽科技等深水调整</li>
+                    <li>军工板块：受地缘政治影响复杂，航亚科技大跌</li>
+                    <li>有色金属：锡业股份等大幅下挫</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">核心热点个股</h2>
+            <div class="stock-list" id="hot-stocks">
+                <div class="stock-item">
+                    <div class="stock-name">中国石油</div>
+                    <div class="stock-code">601857</div>
+                    <div>+10.04%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">中国石化</div>
+                    <div class="stock-code">600028</div>
+                    <div>+9.99%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">洲际油气</div>
+                    <div class="stock-code">600759</div>
+                    <div>+9.96%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">招商南油</div>
+                    <div class="stock-code">601919</div>
+                    <div>+10.02%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">山东墨龙</div>
+                    <div class="stock-code">002490</div>
+                    <div>+9.87%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">准油股份</div>
+                    <div class="stock-code">002207</div>
+                    <div>+9.92%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">量能分析</h2>
+            <div id="volume-analysis">
+                <p><strong>竞价数据：</strong></p>
+                <ul>
+                    <li>洲际油气：周一26.5亿 → 周二41.3亿（量能放大58%）</li>
+                    <li>招商南油：周二竞价6.45亿</li>
+                    <li>山东墨龙：周二竞价10.5亿</li>
+                    <li>准油股份：周二竞价4.13亿</li>
+                </ul>
+                <p><strong>量价关系：</strong>石油板块量价齐升，前排个股封单坚决，后排开始出现分歧迹象。</p>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">下午1-3点超短线操作建议</h2>
+            <div id="afternoon-strategy">
+                <p><strong>总体策略：</strong>石油/天然气仍是主线，但需注意明日分化风险。科技板块等待企稳信号。</p>
+                
+                <div class="profit-target">
+                    <h3>🎯 明天能套利走人的标的推荐（超短线重点）</h3>
+                    <p><strong>1. 招商南油（601919）</strong> - 航运+石油双重概念，今日首板，量能健康，明天有冲高套利机会</p>
+                    <p><strong>2. 山东墨龙（002490）</strong> - 石油设备+低价，今日换手充分，明日有望继续冲高</p>
+                    <p><strong>3. 准油股份（002207）</strong> - 小市值石油股，弹性好，适合明日套利</p>
+                    <p><strong>4. 水发燃气（603318）</strong> - 天然气概念，今日竞价5.2亿，有补涨潜力</p>
+                </div>
+                
+                <div class="risk-warning">
+                    <h3>⚠️ 风险提示</h3>
+                    <p>- 石油板块已高潮，明日大概率分化，只做前排，回避后排</p>
+                    <p>- 科技板块暂时回避，等待企稳信号</p>
+                    <p>- 军工板块走势复杂，不宜追高</p>
+                </div>
+                
+                <p><strong>具体操作：</strong></p>
+                <ul>
+                    <li>如果持有前排石油股，可考虑明天冲高减仓或清仓</li>
+                    <li>如果想参与套利，重点关注上述4只标的的低吸机会</li>
+                    <li>严格控制仓位，单票不超过30%</li>
+                    <li>设置止损位：-5%强制止损</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timestamp">2026-03-03 12:25</div>
+    </div>
+</body>
+</html>
