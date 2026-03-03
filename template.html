@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background-color: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .report-section { background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section-title { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 15px; }
+        .stock-list { display: flex; flex-wrap: wrap; gap: 15px; }
+        .stock-item { background-color: #ecf0f1; padding: 10px; border-radius: 5px; min-width: 120px; }
+        .stock-name { font-weight: bold; color: #2980b9; }
+        .stock-code { color: #7f8c8d; font-size: 0.9em; }
+        .money-flow { display: flex; justify-content: space-between; margin: 10px 0; }
+        .inflow { color: #27ae60; font-weight: bold; }
+        .outflow { color: #e74c3c; font-weight: bold; }
+        .timestamp { color: #7f8c8d; font-style: italic; text-align: right; margin-top: 20px; }
+        .navigation { margin-bottom: 20px; }
+        .nav-link { display: inline-block; margin-right: 15px; color: #3498db; text-decoration: none; }
+        .nav-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{TITLE}}</h1>
+            <p>生成时间: {{DATE_TIME}}</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-link">最新报告</a>
+            <a href="archive/" class="nav-link">历史报告</a>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">市场概览</h2>
+            <div id="market-overview">{{MARKET_OVERVIEW}}</div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">资金流向</h2>
+            <div class="money-flow">
+                <div class="inflow">净流入最多板块: {{TOP_INFLOW}}</div>
+                <div class="outflow">净流出最多板块: {{TOP_OUTFLOW}}</div>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">重点新闻</h2>
+            <div id="news">{{NEWS}}</div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">赚钱效应 & 亏钱效应</h2>
+            <div id="profit-loss">{{PROFIT_LOSS}}</div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">核心热点个股</h2>
+            <div class="stock-list" id="hot-stocks">{{HOT_STOCKS}}</div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">量能分析</h2>
+            <div id="volume-analysis">{{VOLUME_ANALYSIS}}</div>
+        </div>
+        
+        {{ADDITIONAL_CONTENT}}
+        
+        <div class="timestamp">{{DATE_TIME}}</div>
+    </div>
+</body>
+</html>

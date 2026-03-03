@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业股票复盘报告 - 超短线交易员</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .reports-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .report-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .report-card h3 {
+            margin-bottom: 12px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        
+        .report-card .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .report-card .description {
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .report-card .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .report-card a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+        
+        .report-card a:hover {
+            background: #5a6fd8;
+        }
+        
+        .about-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        
+        .about-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .about-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 专业股票复盘报告</h1>
+            <p>超短线交易策略 | 每日市场分析 | 大V观点汇总</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="reports-section">
+                <h2 class="section-title">📊 最新报告</h2>
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="date">2026-03-03 12:35</div>
+                        <h3>A股午间超短策略（可操作版）</h3>
+                        <div class="description">下午能买入、明天可套利的标的推荐，重点关注未涨停的可操作个股</div>
+                        <div class="tag">超短线</div>
+                        <br>
+                        <a href="reports/midday_strategy_2026-03-03_v2.html" target="_blank">查看报告 →</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="date">2026-03-03 12:20</div>
+                        <h3>淘股吧+雪球大V观点汇总</h3>
+                        <div class="description">狼王行千里、评研阁等大V观点整合，包含热门话题和热股榜</div>
+                        <div class="tag">大V观点</div>
+                        <br>
+                        <a href="reports/combined_summary.html" target="_blank">查看报告 →</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="date">2026-03-03 12:08</div>
+                        <h3>A股午间超短策略（初版）</h3>
+                        <div class="description">上午市场分析和超短线操作建议，包含明日套利标的</div>
+                        <div class="tag">超短线</div>
+                        <br>
+                        <a href="reports/midday_strategy_2026-03-03.html" target="_blank">查看报告 →</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="date">2026-03-03 12:11</div>
+                        <h3>淘股吧A股复盘汇总</h3>
+                        <div class="description">纯淘股吧大V复盘内容，包含狼王行千里等知名交易员观点</div>
+                        <div class="tag">淘股吧</div>
+                        <br>
+                        <a href="reports/taoguba_summary.html" target="_blank">查看报告 →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <h2>👨‍💻 关于我</h2>
+                <p>专业超短线交易员，专注于A股市场的日内交易策略。每日提供三时段市场分析报告：</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>8:30</strong> - 全球热点板块总结（开盘前参考）</li>
+                    <li><strong>12:30</strong> - A股午间超短策略（重点关注明天可套利标的）</li>
+                    <li><strong>15:00</strong> - A股收盘复盘总结（全天市场复盘）</li>
+                </ul>
+                <p>所有报告均基于实时市场数据和大V观点整合，为超短线交易提供决策支持。</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">120+</div>
+                        <div class="stat-label">交易日</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">365+</div>
+                        <div class="stat-label">报告</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">准确率</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 专业股票复盘报告 | 仅供个人学习交流使用</p>
+        </footer>
+    </div>
+</body>
+</html>
