@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A股午间超短策略 - 2026-03-04</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background-color: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .report-section { background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section-title { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 15px; }
+        .stock-list { display: flex; flex-wrap: wrap; gap: 15px; }
+        .stock-item { background-color: #ecf0f1; padding: 10px; border-radius: 5px; min-width: 120px; }
+        .stock-name { font-weight: bold; color: #2980b9; }
+        .stock-code { color: #7f8c8d; font-size: 0.9em; }
+        .money-flow { display: flex; justify-content: space-between; margin: 10px 0; }
+        .inflow { color: #27ae60; font-weight: bold; }
+        .outflow { color: #e74c3c; font-weight: bold; }
+        .timestamp { color: #7f8c8d; font-style: italic; text-align: right; margin-top: 20px; }
+        .navigation { margin-bottom: 20px; }
+        .nav-link { display: inline-block; margin-right: 15px; color: #3498db; text-decoration: none; }
+        .nav-link:hover { text-decoration: underline; }
+        .highlight { background-color: #fff3cd; padding: 2px 4px; border-radius: 3px; }
+        .profit-target { background-color: #d4edda; padding: 10px; border-left: 4px solid #28a745; margin: 15px 0; }
+        .risk-warning { background-color: #f8d7da; padding: 10px; border-left: 4px solid #dc3545; margin: 15px 0; }
+        .operational { background-color: #e2e3e5; padding: 10px; border-left: 4px solid #6c757d; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>A股午间超短策略</h1>
+            <p>生成时间: 2026-03-04 12:30</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="../index.html" class="nav-link">最新报告</a>
+            <a href="../reports/" class="nav-link">历史报告</a>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">上午市场概览</h2>
+            <div id="market-overview">
+                <p><strong>大盘表现：</strong>上证指数4080.61点（-1.02%），深证成指13949.64点（-0.52%），创业板指3175.51点（-1.06%）。</p>
+                <p><strong>市场特征：</strong>明显的分化格局，受中东地缘政治冲突持续发酵影响，能源板块继续强势，但其他板块普遍承压。</p>
+                <p><strong>涨跌分布：</strong>4800+个股下跌，典型的指数失真行情，权重护盘但个股普跌。</p>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">资金流向分析</h2>
+            <div class="money-flow">
+                <div class="inflow">净流入最多板块: 油气/煤炭 (+8.2亿)</div>
+                <div class="outflow">净流出最多板块: 航运/科技 (-12.5亿)</div>
+            </div>
+            <p><strong>板块轮动：</strong>"三桶油"集体走出2连板，成为市场绝对主线。但航运板块大幅下挫，中远海能跌停，招商轮船-8.85%。</p>
+            <p><strong>资金避险：</strong>地缘政治风险升级，资金涌入油气、煤炭等资源类板块，科技股被大幅抛售。</p>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">赚钱效应 & 亏钱效应</h2>
+            <div id="profit-loss">
+                <p><strong>赚钱效应：</strong></p>
+                <ul>
+                    <li>油气板块：三桶油集体2连板，赚钱效应集中</li>
+                    <li>煤炭板块：中煤能源创17年新高</li>
+                    <li>农业概念：秋乐种业等相对活跃</li>
+                </ul>
+                
+                <p><strong>亏钱效应：</strong></p>
+                <ul>
+                    <li>航运板块：中远海能跌停，招商轮船-8.85%</li>
+                    <li>科技板块：受美股拖累，全面调整</li>
+                    <li>有色金属：整体下挫，资金流出明显</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">核心热点个股</h2>
+            <div class="stock-list" id="hot-stocks">
+                <div class="stock-item">
+                    <div class="stock-name">中国石油</div>
+                    <div class="stock-code">601857</div>
+                    <div>+4.11%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">中远海发</div>
+                    <div class="stock-code">601866</div>
+                    <div>+10.17%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">潜能恒信</div>
+                    <div class="stock-code">300191</div>
+                    <div>+20.01%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">豫能控股</div>
+                    <div class="stock-code">001896</div>
+                    <div>+9.98%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">佰维存储</div>
+                    <div class="stock-code">688525</div>
+                    <div>+20.00%</div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-name">江波龙</div>
+                    <div class="stock-code">301308</div>
+                    <div>+14.30%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">下午可操作的套利标的</h2>
+            <div class="operational">
+                <h3>🎯 下午能买入、明天可套利的标的（超短线重点）</h3>
+                <p><strong>选股逻辑：</strong>避开已涨停无法买入的个股，选择有补涨潜力、下午可介入、明天有冲高套利机会的标的</p>
+                
+                <p><strong>1. 中远海控（601919）</strong> - 航运龙头，-7.54%深水调整，但基本面受益于VLCC运费上涨100%，下午如果企稳可低吸博弈反抽</p>
+                <p><strong>2. 中国海油（600938）</strong> - +2.51%未涨停，作为三桶油中涨幅最小的，有补涨需求，适合明日套利</p>
+                <p><strong>3. 秋乐种业（301057）</strong> - 农业概念，相对抗跌，如果下午放量可关注</p>
+                <p><strong>4. 亚盛集团（600108）</strong> - 农业+土地流转，米小柚提到"不板则清"，如果下午有资金回流农业可博弈</p>
+                <p><strong>5. 泰嘉股份（002843）</strong> - 算力概念，米小柚持仓，如果科技板块下午企稳有反抽机会</p>
+            </div>
+            
+            <div class="profit-target">
+                <h3>📈 具体操作策略</h3>
+                <p><strong>中远海控（601919）：</strong>下午如果在-5%~-6%区间企稳，可小仓位低吸，目标明天反抽+3%~+5%套利</p>
+                <p><strong>中国海油（600938）：</strong>下午如果继续温和放量上攻，可分批建仓，目标明天冲高+4%~+6%套利</p>
+                <p><strong>秋乐种业（301057）：</strong>关注下午是否放量突破，如果有量能配合可轻仓参与</p>
+                <p><strong>亚盛集团（600108）：</strong>观察农业板块整体表现，如果板块走强可博弈反弹</p>
+                <p><strong>泰嘉股份（002843）：</strong>科技股超跌反弹，严格控制仓位，止损位-5%</p>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">风险控制</h2>
+            <div class="risk-warning">
+                <h3>⚠️ 重要风险提示</h3>
+                <p>- 油气板块已连续大涨，明日分化风险加大，不要追高已涨停个股</p>
+                <p>- 航运板块受地缘政治影响复杂，只做超跌反弹，不宜重仓</p>
+                <p>- 科技板块仍处于调整期，只做超跌反弹，严格控制仓位</p>
+                <p>- 总仓位建议不超过50%，单票不超过20%</p>
+                <p>- 设置-5%止损位，严格执行</p>
+            </div>
+        </div>
+        
+        <div class="report-section">
+            <h2 class="section-title">板块轮动预期</h2>
+            <div id="rotation-outlook">
+                <p><strong>油气/煤炭：</strong>今日高潮，明日可能分化，前排继续冲高，后排可能补跌</p>
+                <p><strong>航运：</strong>受霍尔木兹海峡影响，短期承压但基本面改善，有反抽机会</p>
+                <p><strong>科技：</strong>今日调整充分，明天可能有超跌反弹，重点关注人气股</p>
+                <p><strong>农业：</strong>防御性板块，如果市场继续调整可能有资金流入</p>
+                <p><strong>电网/AI：</strong>ETF和LOF圈提到的AI+电网概念，值得关注</p>
+            </div>
+        </div>
+        
+        <div class="timestamp">2026-03-04 12:30</div>
+    </div>
+</body>
+</html>
