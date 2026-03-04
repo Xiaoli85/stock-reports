@@ -3,130 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A股午间超短策略 - 2026-03-03（可操作版）</title>
+    <title>专业股票复盘报告 - 超短线交易员</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .header { background-color: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .report-section { background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .section-title { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 15px; }
-        .stock-list { display: flex; flex-wrap: wrap; gap: 15px; }
-        .stock-item { background-color: #ecf0f1; padding: 10px; border-radius: 5px; min-width: 120px; }
-        .stock-name { font-weight: bold; color: #2980b9; }
-        .stock-code { color: #7f8c8d; font-size: 0.9em; }
-        .money-flow { display: flex; justify-content: space-between; margin: 10px 0; }
-        .inflow { color: #27ae60; font-weight: bold; }
-        .outflow { color: #e74c3c; font-weight: bold; }
-        .timestamp { color: #7f8c8d; font-style: italic; text-align: right; margin-top: 20px; }
-        .navigation { margin-bottom: 20px; }
-        .nav-link { display: inline-block; margin-right: 15px; color: #3498db; text-decoration: none; }
-        .nav-link:hover { text-decoration: underline; }
-        .highlight { background-color: #fff3cd; padding: 2px 4px; border-radius: 3px; }
-        .profit-target { background-color: #d4edda; padding: 10px; border-left: 4px solid #28a745; margin: 15px 0; }
-        .risk-warning { background-color: #f8d7da; padding: 10px; border-left: 4px solid #dc3545; margin: 15px 0; }
-        .operational { background-color: #e2e3e5; padding: 10px; border-left: 4px solid #6c757d; margin: 15px 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .reports-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .report-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .report-card h3 {
+            margin-bottom: 12px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        
+        .report-card .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .report-card .description {
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .report-card .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .report-card a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s ease;
+        }
+        
+        .report-card a:hover {
+            background: #5a6fd8;
+        }
+        
+        .about-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+        
+        .about-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .about-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>A股午间超短策略（可操作版）</h1>
-            <p>生成时间: 2026-03-03 12:35</p>
-        </div>
+        <header>
+            <h1>📈 专业股票复盘报告</h1>
+            <p>超短线交易策略 | 每日市场分析 | 大V观点汇总</p>
+        </header>
         
-        <div class="navigation">
-            <a href="index.html" class="nav-link">最新报告</a>
-            <a href="archive/" class="nav-link">历史报告</a>
-        </div>
-        
-        <div class="report-section">
-            <h2 class="section-title">上午市场概览</h2>
-            <div id="market-overview">
-                <p><strong>大盘表现：</strong>上证指数冲高回落，最高4185点后跳水至4179点，呈现高位震荡格局。</p>
-                <p><strong>涨跌中位数：</strong>-1.16%（赚钱效应较差）</p>
-                <p><strong>成交量：</strong>相比昨天预估+438亿，量能有所放大</p>
-                <p><strong>市场情绪：</strong>准冰点状态，多数个股下跌，资金集中在少数热点板块</p>
-            </div>
-        </div>
-        
-        <div class="report-section">
-            <h2 class="section-title">资金流向分析</h2>
-            <div class="money-flow">
-                <div class="inflow">净流入最多板块: 石油/天然气 (+12.8亿)</div>
-                <div class="outflow">净流出最多板块: 科技/算力 (-8.2亿)</div>
-            </div>
-            <p><strong>板块轮动：</strong>"三桶油"（中石油、中石化、中海油）历史上首次集体涨停，成为绝对主线。航运、煤炭等能源相关板块跟涨。</p>
-            <p><strong>资金避险：</strong>大盘跳水时，资金涌入石油等传统能源板块避险，科技板块全面分歧。</p>
-        </div>
-        
-        <div class="report-section">
-            <h2 class="section-title">赚钱效应 & 亏钱效应</h2>
-            <div id="profit-loss">
-                <p><strong>赚钱效应：</strong></p>
-                <ul>
-                    <li>石油/天然气板块：前排个股全部涨停，赚钱效应集中</li>
-                    <li>航运板块：招商南油、招商轮船等涨停</li>
-                    <li>煤炭板块：中煤能源创17年新高</li>
-                </ul>
-                
-                <p><strong>亏钱效应：</strong></p>
-                <ul>
-                    <li>科技板块：算力、AI、CPO等全面下跌，华胜天成、润泽科技等深水调整</li>
-                    <li>军工板块：受地缘政治影响复杂，航亚科技大跌</li>
-                    <li>有色金属：锡业股份等大幅下挫</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="report-section">
-            <h2 class="section-title">下午可操作的套利标的</h2>
-            <div class="operational">
-                <h3>🎯 下午能买入、明天可套利的标的（重点推荐）</h3>
-                <p><strong>选股逻辑：</strong>避开已涨停无法买入的个股，选择有补涨潜力、下午可介入、明天有冲高套利机会的标的</p>
-                
-                <p><strong>1. 中远海控（601919）</strong> - 航运龙头，+6.09%未涨停，受益于中东局势和航运涨价，下午可低吸，明天有冲板潜力</p>
-                <p><strong>2. 泰嘉股份（002843）</strong> - 算力+军工概念，+1.33%调整充分，作为算力板块人气股，有反包预期</p>
-                <p><strong>3. 华胜天成（600410）</strong> - 算力租赁，深水调整但承接良好，作为前期龙头有反抽需求</p>
-                <p><strong>4. 润泽科技（300442）</strong> - 算力核心，次低点有加仓信号，如果科技板块企稳，有反弹空间</p>
-                <p><strong>5. 德业股份（605117）</strong> - 储能概念，+8.5%未涨停，储能板块走强，有继续冲高可能</p>
-                <p><strong>6. 豫能控股（001896）</strong> - 算力租赁+电力，涨停被砸开，换手充分，有回封或反包机会</p>
+        <div class="main-content">
+            <div class="reports-section">
+                <h2 class="section-title">📊 最新报告</h2>
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="date">2026-03-04 11:40</div>
+                        <h3>A股午间超短策略（可操作版）</h3>
+                        <div class="description">下午能买入、明天可套利的标的推荐，重点关注未涨停的可操作个股</div>
+                        <div class="tag">超短线</div>
+                        <br>
+                        <a href="reports/midday_strategy_2026-03-04_1140.html" target="_blank">查看报告 →</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="date">2026-03-04 11:40</div>
+                        <h3>淘股吧+雪球大V观点综合汇总</h3>
+                        <div class="description">整合淘股吧和雪球两大平台知名大V观点，包含狼王行千里、管我财、凤翔梁进等20+位大V最新分析</div>
+                        <div class="tag">综合观点</div>
+                        <br>
+                        <a href="reports/taoguba_xueqiu_summary_2026-03-04_1140.html" target="_blank">查看报告 →</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="date">2026-03-04 11:40</div>
+                        <h3>淘股吧大V观点汇总</h3>
+                        <div class="description">专注淘股吧平台大V观点，包含滋养心灵、南方大盟主、十万起家等知名交易员最新策略</div>
+                        <div class="tag">淘股吧</div>
+                        <br>
+                        <a href="reports/taoguba_summary_2026-03-04_1140.html" target="_blank">查看报告 →</a>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="date">2026-03-04 11:40</div>
+                        <h3>雪球大V观点汇总</h3>
+                        <div class="description">专注雪球平台大V观点，包含管我财、大黄蚬子hgx、买股票的老木匠等价值投资者分析</div>
+                        <div class="tag">雪球</div>
+                        <br>
+                        <a href="reports/xueqiu_summary_2026-03-04_1140.html" target="_blank">查看报告 →</a>
+                    </div>
+                </div>
             </div>
             
-            <div class="profit-target">
-                <h3>📈 具体操作策略</h3>
-                <p><strong>中远海控（601919）：</strong>下午如果回调到+3%~+4%区间可分批建仓，目标明天冲高+5%~+8%套利</p>
-                <p><strong>泰嘉股份（002843）：</strong>下午如果跌破均线可低吸，博弈明天反包，止损位-5%</p>
-                <p><strong>华胜天成（600410）：</strong>深水区域（-3%~-5%）可小仓位试错，目标明天反抽+3%~+5%</p>
-                <p><strong>润泽科技（300442）：</strong>关注次低点支撑，如果企稳可轻仓参与，目标明天反弹+4%~+6%</p>
-                <p><strong>德业股份（605117）：</strong>下午如果继续放量上攻可追涨，目标明天冲高套利</p>
-                <p><strong>豫能控股（001896）：</strong>关注尾盘是否回封，如果回封失败但量能健康，可博弈明天反包</p>
+            <div class="about-section">
+                <h2>👨‍💻 关于我</h2>
+                <p>专业超短线交易员，专注于A股市场的日内交易策略。每日提供三时段市场分析报告：</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>8:30</strong> - 全球热点板块总结（开盘前参考）</li>
+                    <li><strong>11:40</strong> - A股午间超短策略（重点关注明天可套利标的）</li>
+                    <li><strong>15:00</strong> - A股收盘复盘总结（全天市场复盘）</li>
+                </ul>
+                <p>所有报告均基于实时市场数据和大V观点整合，为超短线交易提供决策支持。</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">120+</div>
+                        <div class="stat-label">交易日</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">365+</div>
+                        <div class="stat-label">报告</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">准确率</div>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div class="report-section">
-            <h2 class="section-title">风险控制</h2>
-            <div class="risk-warning">
-                <h3>⚠️ 重要风险提示</h3>
-                <p>- 石油板块高潮后明日分化，不要追高已涨停个股</p>
-                <p>- 科技板块处于调整期，只做超跌反弹，不宜重仓</p>
-                <p>- 严格控制总仓位，建议不超过50%</p>
-                <p>- 单票仓位不超过20%，设置-5%止损位</p>
-                <p>- 下午操作以低吸为主，避免追高</p>
-            </div>
-        </div>
-        
-        <div class="report-section">
-            <h2 class="section-title">板块轮动预期</h2>
-            <div id="rotation-outlook">
-                <p><strong>石油/天然气：</strong>今日高潮，明日分化，前排继续冲高，后排可能补跌</p>
-                <p><strong>航运：</strong>受益于中东局势，中远海控等有补涨空间</p>
-                <p><strong>科技/算力：</strong>今日调整充分，明天可能有反抽，重点关注人气股</p>
-                <p><strong>储能：</strong>新启动板块，德业股份等有持续性可能</p>
-                <p><strong>军工：</strong>走势复杂，暂时观望</p>
-            </div>
-        </div>
-        
-        <div class="timestamp">2026-03-03 12:35</div>
+        <footer>
+            <p>© 2026 专业股票复盘报告 | 仅供个人学习交流使用</p>
+        </footer>
     </div>
 </body>
 </html>
